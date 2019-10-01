@@ -9,6 +9,7 @@
 
   <title>TF-30</title>
   <meta name="description" content="">
+
   <meta property="og:title" content="TF-30">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://example.com/">
@@ -16,6 +17,7 @@
   <meta property="og:site_name" content="TF-30">
   <meta property="og:description" content="">
   <meta name="twitter:card" content="summary_large_image">
+
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css?ver=5.8.2">
   <link rel="stylesheet" href="./css/style.css">
 
@@ -24,59 +26,63 @@
 
 </head>
 
-<!-- header -->
-<header id="header">
-  <div class="inner">
+<body>
+
+  <!-- header -->
+  <header id="header">
+    <div class="inner">
+
+      <!--    
+<h1 class="header-logo"><a href="/">blog title</a></h1>
+<div class="header-sub">サブタイトルが入ります</div>
+-->
+      <?php if (is_home() || is_front_page()) : ?>
+        <h1 class="header-logo"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1><!-- /header-logo -->
+      <?php else : ?>
+        <div class="header-logo"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></div><!-- /header-logo -->
+      <?php endif; ?>
+      <div class="header-sub"><?php bloginfo('description'); ?></div><!-- /header-sub -->
 
 
+      <!-- drawer -->
+      <div class="drawer">
+        <div class="drawer-icon">
+          <span class="drawer-open"><i class="fas fa-bars"></i></span><!-- /drawer-open -->
+          <span class="drawer-close"><i class="fas fa-times"></i></span><!-- drawer-close -->
+        </div><!-- /drawer-icon -->
+        <!-- drawer-content -->
+        <div class="drawer-content">
+          <?php
+          //.drawer-navを置き換えて、スマホ用メニューを動的に表示する
+          wp_nav_menu(
+            array(
+              'depth' => 1,
+              'theme_location' => 'drawer', //drawerの表示位置
+              'container' => 'nav',
+              'container_class' => 'drawer-nav',
+              'menu_class' => 'drawer-list',
+            )
+          ); ?>
+        </div><!-- /drawer-content -->
+      </div><!-- /drawer -->
 
-    <!-- トップページではロゴをh1に、それ以外のページではdivに。 -->
-    <?php if (is_home() || is_front_page()) : ?>
-      <h1 class="header-logo"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
-      <!-- /header-logo -->
-    <?php else : ?>
-      <div class="header-logo"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></div>
-      <!-- /header-logo -->
-    <?php endif; ?>
-    <div class="header-sub"><?php bloginfo('description'); ?></div>
-    <!-- /header-sub -->
-
-
-    <div class="drawer">
-      <div class="drawer-icon">
-        <span class="drawer-open"><i class="fas fa-bars"></i></span><!-- /drawer-open -->
-        <span class="drawer-close"><i class="fas fa-times"></i></span><!-- drawer-close -->
-      </div><!-- /drawer-icon -->
-
-      <!-- drawer-content -->
-      <!-- .drawer-navを置き換えて、スマホ用メニューを動的に表示する -->
-      <div class='drawer-content'>
-        <?php wp_nav_menu(
-          array(
-            'depth' => 1,
-            'thema_location' => 'drawer',
-            'container' => 'nav',
-            'container_class' => 'drawer_nav',
-            'menu_class' => 'drawer_list',
-          )
-        ); ?>
-      </div><!-- /drawer-content -->
-    </div><!-- /drawer -->
-</header><!-- /header -->
+    </div><!-- /inner -->
+  </header><!-- /header -->
 
 
-
-<!-- header-nav -->
-<!-- .header-listを置き換えて、PC用メニューを動的に表示する -->
-<nav class='header-nav'>
-  <div class='inner'>
-    <?php wp_nav_menu(
-      array(
-        'depth' => 1,
-        'thema_location' => 'global',   //グローバルメニューをここに表示すると指定
-        'container' => 'false',    //ulをwrapしない
-        'menu_class' => 'header-list',
-      )
-    ); ?>
-  </div><!-- /inner -->
-</nav><!-- /header-nav -->
+  <!-- header-nav -->
+  <nav class="header-nav">
+    <div class="inner">
+      <?php
+      wp_nav_menu(
+        //.header-listを置き換えて、PC用メニューを動的に表示する
+        array(
+          'depth' => 1,
+          'theme_location' => 'global', //グローバルメニューの表示場所
+          'container' => 'false',
+          'menu_class' => 'header-list',
+        )
+      );
+      ?>
+    </div><!-- /inner -->
+  </nav><!-- header-nav -->
