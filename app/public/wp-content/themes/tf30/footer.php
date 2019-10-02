@@ -10,7 +10,7 @@
 
     <?php
     wp_nav_menu(
-      //.footer-listを置き換えて、PC用メニューを動的に表示する
+      //.footer-listを動的に表示
       array(
         'depth' => 1,
         'theme_location' => 'footer', //footerメニューの表示場所
