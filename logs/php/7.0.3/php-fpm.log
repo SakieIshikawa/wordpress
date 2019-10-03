@@ -4,3 +4,6 @@
 [01-Oct-2019 07:07:37] NOTICE: ready to handle connections
 [01-Oct-2019 13:46:16] NOTICE: fpm is running, pid 370
 [01-Oct-2019 13:46:16] NOTICE: ready to handle connections
+[02-Oct-2019 10:24:49] NOTICE: fpm is running, pid 212
+[02-Oct-2019 10:24:49] NOTICE: ready to handle connections
+[02-Oct-2019 10:31:35] WARNING: [pool www] server reached pm.max_children setting (5), consider raising it
