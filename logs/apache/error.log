@@ -6,3 +6,7 @@
 [Tue Oct 01 13:46:15.448546 2019] [core:notice] [pid 128:tid 140138948241280] AH00094: Command line: '/usr/sbin/apache2'
 [Wed Oct 02 10:24:48.929529 2019] [mpm_event:notice] [pid 131:tid 140338945279872] AH00489: Apache/2.4.10 (Debian) configured -- resuming normal operations
 [Wed Oct 02 10:24:48.929611 2019] [core:notice] [pid 131:tid 140338945279872] AH00094: Command line: '/usr/sbin/apache2'
+[Thu Oct 03 08:22:31.834591 2019] [mpm_event:notice] [pid 256:tid 140106187753344] AH00489: Apache/2.4.10 (Debian) configured -- resuming normal operations
+[Thu Oct 03 08:22:31.834669 2019] [core:notice] [pid 256:tid 140106187753344] AH00094: Command line: '/usr/sbin/apache2'
+[Thu Oct 03 08:22:32.024831 2019] [proxy:error] [pid 264:tid 140106076452608] (111)Connection refused: AH02454: FCGI: attempt to connect to Unix domain socket /var/run/php-fpm.sock (*) failed
+[Thu Oct 03 08:22:32.024911 2019] [proxy_fcgi:error] [pid 264:tid 140106076452608] [client 172.17.0.1:49022] AH01079: failed to make connection to backend: httpd-UDS

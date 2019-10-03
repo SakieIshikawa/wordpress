@@ -98,3 +98,27 @@ InnoDB: buffer...
 191002 10:24:50 [Note] Event Scheduler: Loaded 0 events
 191002 10:24:50 [Note] /usr/sbin/mysqld: ready for connections.
 Version: '5.5.60-0+deb8u1'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  (Debian)
+191003  8:22:33 [Warning] Using unique option prefix myisam-recover instead of myisam-recover-options is deprecated and will be removed in a future release. Please use the full name instead.
+191003  8:22:33 [Note] Plugin 'FEDERATED' is disabled.
+191003  8:22:33 InnoDB: The InnoDB memory heap is disabled
+191003  8:22:33 InnoDB: Mutexes and rw_locks use GCC atomic builtins
+191003  8:22:33 InnoDB: Compressed tables use zlib 1.2.8
+191003  8:22:33 InnoDB: Using Linux native AIO
+191003  8:22:33 InnoDB: Initializing buffer pool, size = 32.0M
+191003  8:22:33 InnoDB: Completed initialization of buffer pool
+191003  8:22:33 InnoDB: highest supported file format is Barracuda.
+InnoDB: The log sequence number in ibdata files does not match
+InnoDB: the log sequence number in the ib_logfiles!
+191003  8:22:33  InnoDB: Database was not shut down normally!
+InnoDB: Starting crash recovery.
+InnoDB: Reading tablespace information from the .ibd files...
+InnoDB: Restoring possible half-written data pages from the doublewrite
+InnoDB: buffer...
+191003  8:22:33  InnoDB: Waiting for the background threads to start
+191003  8:22:34 InnoDB: 5.5.60 started; log sequence number 4223506
+191003  8:22:34 [Note] Server hostname (bind-address): '0.0.0.0'; port: 3306
+191003  8:22:34 [Note]   - '0.0.0.0' resolves to '0.0.0.0';
+191003  8:22:34 [Note] Server socket created on IP: '0.0.0.0'.
+191003  8:22:34 [Note] Event Scheduler: Loaded 0 events
+191003  8:22:34 [Note] /usr/sbin/mysqld: ready for connections.
+Version: '5.5.60-0+deb8u1'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  (Debian)

@@ -8,14 +8,14 @@
   <meta name="format-detection" content="telephone=no">
 
   <title>My blog</title>
-  <meta name="description" content="">
+  <meta name="description" content="my blog">
 
-  <meta property="og:title" content="TF-30">
+  <meta property="og:title" content="my blog">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://example.com/">
   <meta property="og:image" content="https://example.com/img/ogp.png">
   <meta property="og:site_name" content="my blog">
-  <meta property="og:description" content="">
+  <meta property="og:description" content="my blog">
   <meta name="twitter:card" content="summary_large_image">
 
   <?php wp_head(); ?>
@@ -29,16 +29,12 @@
   <header id="header">
     <div class="inner">
 
-      <!--    
-<h1 class="header-logo"><a href="/">blog title</a></h1>
-<div class="header-sub">サブタイトルが入ります</div>
--->
       <?php if (is_home() || is_front_page()) : ?>
-        <h1 class="header-logo"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1><!-- /header-logo -->
+        <h1 class="header-logo"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
       <?php else : ?>
-        <div class="header-logo"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></div><!-- /header-logo -->
+        <div class="header-logo"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></div>
       <?php endif; ?>
-      <div class="header-sub"><?php bloginfo('description'); ?></div><!-- /header-sub -->
+      <div class="header-sub"><?php bloginfo('description'); ?></div>
 
 
       <!-- drawer -->

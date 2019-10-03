@@ -1,0 +1,14 @@
+[03-Oct-2019 10:36:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pagenate_links() in /app/public/wp-content/themes/tf30/index.php:126
+Stack trace:
+#0 /app/public/wp-includes/template-loader.php(78): include()
+#1 /app/public/wp-blog-header.php(19): require_once('/app/public/wp-...')
+#2 /app/public/index.php(17): require('/app/public/wp-...')
+#3 {main}
+  thrown in /app/public/wp-content/themes/tf30/index.php on line 126
+[03-Oct-2019 11:55:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function has_posts() in /app/public/wp-content/themes/tf30/category.php:38
+Stack trace:
+#0 /app/public/wp-includes/template-loader.php(78): include()
+#1 /app/public/wp-blog-header.php(19): require_once('/app/public/wp-...')
+#2 /app/public/index.php(17): require('/app/public/wp-...')
+#3 {main}
+  thrown in /app/public/wp-content/themes/tf30/category.php on line 38

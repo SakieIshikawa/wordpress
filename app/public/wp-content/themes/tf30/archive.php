@@ -1,6 +1,6 @@
 <!-- header -->
-<!-- header-navまで(header.php)をget_header()に置き換える -->
 <?php get_header(); ?>
+
 
 <!-- content -->
 <div id="content">
@@ -32,79 +32,60 @@
 
 
 
-      <?php
-      //記事があればentriesブロック以下を表示
-      if (have_posts()) :
-        ?>
+      <?php if (have_posts()) : ?>
         <!-- entries -->
         <div class="entries m_horizontal">
-          <?php
-          //記事数ぶんループ
-          while (have_posts()) :
-            the_post();
-            ?>
+          <?php while (has_posts()) :
+            the_post(); ?>
 
             <!-- entry-item -->
-            <a href="<?php the_permalink();
-                      ?>" class="entry-item">
-              <!-- entry-item-img -->
+            <a href="<?php the_permalink(); ?>" class="entry-item">
               <div class="entry-item-img">
                 <?php
                 if (has_post_thumbnail()) {
-                  // アイキャッチ画像が設定されてれば大サイズで表示
                   the_post_thumbnail('large');
                 } else {
-                  // なければnoimage画像をデフォルトで表示
                   echo '<img src="' . esc_url(get_template_directory_uri()) . '/img/noimg.png" alt="">';
                 }
                 ?>
-              </div><!-- /entry-item-img -->
+              </div>
 
               <!-- entry-item-body -->
               <div class="entry-item-body">
                 <div class="entry-item-meta">
                   <?php
-                  // カテゴリー１つ目の名前を表示
                   $category = get_the_category();
                   if ($category[0]) {
-                    echo '<div class="entry-item-tag">' . $category[0]->cat_name . '</div><!-- /entry-item-tag -->';
+                    echo '<div class="entry-item-tag">' . $category[0]->cat_name . '</div>';
                   }
                   ?>
-                  <!-- 公開日時を動的に表示する -->
-                  <time class="entry-item-published" datetime="<?php the_time('c'); ?>"><?php the_time('Y/n/j'); ?></time><!-- /entry-item-published -->
-                </div><!-- /entry-item-meta -->
-                <h2 class="entry-item-title"><?php the_title();
-                                              ?></h2><!-- /entry-item-title -->
-                <div class="entry-item-excerpt">
-                  <?php the_excerpt();
-                  ?>
-                </div><!-- /entry-item-excerpt -->
-              </div><!-- /entry-item-body -->
+                  <time class="entry-item-published" datetime="<?php the_time('d'); ?>"><?php the_time('Y/n/j'); ?></time>
+                </div>
+                <h2 class="entry-item-title"><?php the_title(); ?></h2>
+                <div class="entry-item-excerpt"><?php the_excerpt(); ?></div>
+              </div>
             </a><!-- /entry-item -->
-          <?php
-        endwhile;
-        ?>
+          <?php endwhile; ?>
 
         </div><!-- /entries -->
       <?php endif; ?>
 
-      <?php if (paginate_links()) :
-        ?>
-        <!-- pagenation -->
+      <!-- pagenation -->
+      <!-- ページが1ページ以上あればページングを表示 -->
+      <?php if (paginate_links()) : ?>
         <div class="pagenation">
-          <?php
-          echo
+          <?php echo
             paginate_links(
               array(
                 'end_size' => 0,
-                'mid_size' => 1,
+                'mid_size'  => 2,
                 'prev_next' => true,
                 'prev_text' => '<i class="fas fa-angle-left"></i>',
                 'next_text' => '<i class="fas fa-angle-right"></i>',
               )
             );
           ?>
-        </div><!-- /pagenation -->
+        </div>
       <?php endif; ?>
 
     </main><!-- /primary -->
@@ -259,5 +240,6 @@
   </div><!-- /inner -->
 </div><!-- /content -->
 
-<!-- footer-menu(footer.php)から下をget_footer()に置き換える -->
+
+<!-- header -->
 <?php get_footer(); ?>
